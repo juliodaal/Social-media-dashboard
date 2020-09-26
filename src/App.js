@@ -9,7 +9,7 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      {/* <Main /> */}
+      <Main />
     </React.Fragment>
   );
 }

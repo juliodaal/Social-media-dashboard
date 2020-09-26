@@ -1,0 +1,133 @@
+.container-overviews{
+    width: 100%;
+}
+.container-overviews h2{
+    margin-bottom: 15px;
+    font-size: 1.73em;
+    transition: color 0.3s;
+    color: hsl(228, 34%, 66%);
+}
+body.light .container-overviews h2{
+    color: hsl(228, 12%, 44%);
+}
+.container-overviews-cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+}
+.overview-card{
+    width: 100%;
+    margin-bottom: 16px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background-color: hsl(228, 28%, 20%);
+    max-width: 325px;
+    transition: background-color 0.3s;
+    padding: 25px 30px 25px 25px;
+    border-radius: 5px;
+}
+body.light .overview-card{
+    background-color: hsl(227, 47%, 96%);
+}
+.overview-card:focus{
+    outline: 0;
+}
+.overview-card:hover{
+    background-color: hsl(228, 26%, 27%);
+}
+body.light .overview-card:hover{
+    background-color: hsl(232, 33%, 91%);
+}
+.top-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 26.2px;
+}
+.top-content span{
+    font-size: 0.97em;
+    font-weight: 700;
+    line-height: 1.7em;
+    transition: color 0.3s;
+    color: hsl(228 34% 66%);
+}
+body.light .top-content span{
+    color: hsl(228, 12%, 44%);
+}
+.top-content figure{
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.overview-card:nth-of-type(1) .top-content figure{
+    background-image: url('../../assets/images/icon-facebook.svg');
+}
+.overview-card:nth-of-type(2) .top-content figure{
+    background-image: url('../../assets/images/icon-facebook.svg');
+}
+.overview-card:nth-of-type(3) .top-content figure{
+    background-image: url('../../assets/images/icon-instagram.svg');
+}
+.overview-card:nth-of-type(4) .top-content figure{
+    background-image: url('../../assets/images/icon-instagram.svg');
+}
+.overview-card:nth-of-type(5) .top-content figure{
+    background-image: url('../../assets/images/icon-twitter.svg');
+}
+.overview-card:nth-of-type(6) .top-content figure{
+    background-image: url('../../assets/images/icon-twitter.svg');
+}
+.overview-card:nth-of-type(7) .top-content figure{
+    background-image: url('../../assets/images/icon-youtube.svg');
+}
+.overview-card:nth-of-type(8) .top-content figure{
+    background-image: url('../../assets/images/icon-youtube.svg');
+}
+.bottom-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-content p{
+    font-size: 2.25em;
+    line-height: 0.85em;
+    transition: color 0.3s;
+    font-weight: 900;
+    color: hsl(0, 0%, 100%);
+}
+body.light .bottom-content p{
+    color: hsl(230, 17%, 14%);
+}
+.bottom-content span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85em;
+    font-weight: 900;
+}
+.bottom-content span figure{
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bottom-content .win{
+    color: #1db489;
+}
+.bottom-content .lost{
+    color: #dc414c;
+}
+.bottom-content .win figure{
+    background-image: url('../../assets/images/icon-up.svg');
+}
+.bottom-content .lost figure{
+    background-image: url('../../assets/images/icon-down.svg');
+}
