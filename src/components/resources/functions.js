@@ -17,7 +17,7 @@ export const lostFollowers = (domElement) => {
     domElement.current.classList.add('lost')
     domElement.current.classList.remove('win')
 }
-export const calcPercent = (prop,localItem) => {
+export const calcPercent = (prop,localItem)  => {
     if(prop == ':('){return prop}
     if(prop == 0 && localItem == 0){return '0.00'} 
     let value = prop - localItem
