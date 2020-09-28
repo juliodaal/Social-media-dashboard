@@ -1,4 +1,4 @@
-import testSend from './testSend'
+import sendToLocalStorage from './SendToLocalStorage'
 
 class Youtube {
     constructor(el){
@@ -13,9 +13,12 @@ class Youtube {
         try {
             const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${this.id}&key=${this.key}`);
             const data = await response.json();
-            
-            this.state ={ data: data }
-            return this.packingData()
+            if(Object.keys(data).length !== 0 ){
+                this.state ={ data: data }
+                return this.packingData()
+            } else {
+                throw new Error('Empty Fields');
+            }
         } catch (error) {
             this.state = { error: error }
             return this.handleError()
@@ -29,7 +32,7 @@ class Youtube {
         const countFollowers = this.state.data.items[0].statistics.subscriberCount
         const views = this.state.data.items[0].statistics.viewCount 
 
-        this.followersUp = testSend(countFollowers,publications,views)
+        this.followersUp = sendToLocalStorage(countFollowers,publications,views,'youtube')
         
         return {
             followers: countFollowers,

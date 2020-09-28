@@ -11,10 +11,14 @@ class Instagram {
     }
     fetchData = async () => {
         try {
-            const response = await fetch(`https://www.instagram.com/${this.name}/?__a=1`);
-            const data = await response.json();
-            this.state ={ data: data }
-            return this.packingData()
+            const response = await fetch(`https://www.instagram.com/${this.name}/?__a=1`)
+            const data = await response.json()
+            if(Object.keys(data).length !== 0 ){
+                this.state ={ data: data }
+                return this.packingData()
+            }  else {
+                throw new Error('Empty Fields');
+            }
         } catch (error) {
             this.state = { error: error }
             return this.handleError()
@@ -30,7 +34,7 @@ class Instagram {
 
         arrayPublication.forEach(publication => { this.likes = this.likes + publication.node.edge_media_preview_like.count });
         
-        this.followersUp = sendToLocalStorage(countFollowers,publications, this.likes)
+        this.followersUp = sendToLocalStorage(countFollowers,publications, this.likes,'instagram')
 
         return {
             followers: countFollowers,

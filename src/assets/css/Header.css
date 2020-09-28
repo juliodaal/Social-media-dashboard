@@ -10,7 +10,8 @@ header{
 body.light header{
     background: hsl(225, 100%, 98%);
 }
-.container{
+.container,
+header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;

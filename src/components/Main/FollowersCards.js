@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { loading,showDataFollowers,winOrLostFollowers } from '../resources/functions'
 
 import '../../assets/css/FollowersCards.css'
@@ -16,11 +15,11 @@ class FollowersCards extends React.Component {
         this.loaderInsta = React.createRef();
         this.loaderYoutube = React.createRef();
     }
-    packingResources(){
+    packingResources = () => {
         return [
             {
                 id: 1,
-                name: '@keepcode',
+                name: '@JulioCesarDaal',
                 refLoader: this.loaderFace,
                 refUpdat: this.updateFollowersFacebook,
                 followers: 295,
@@ -30,7 +29,7 @@ class FollowersCards extends React.Component {
             },
             {
                 id: 2,
-                name: '@keepcode',
+                name: '@julio_daal',
                 refLoader: this.loaderTwitter,
                 refUpdate: this.updateFollowersTwitter, 
                 followers: 103,
@@ -40,7 +39,7 @@ class FollowersCards extends React.Component {
             },
             {
                 id: 3,
-                name: '@keepcode', 
+                name: '@julio_daal', 
                 refLoader: this.loaderInsta,
                 refUpdate: this.updateFollowersInstagram,
                 followers: showDataFollowers(this.props.propInstagram,'followers'),
@@ -60,7 +59,7 @@ class FollowersCards extends React.Component {
             },
         ]
     }
-    componentDidUpdate(){
+    componentDidUpdate = () => {
         loading(this.packingResources(),'loader')
         winOrLostFollowers(this.props.propInstagram.followersUp,this.updateFollowersInstagram)
         winOrLostFollowers(this.props.propYoutube.followersUp,this.updateFollowersYoutube)
@@ -70,7 +69,8 @@ class FollowersCards extends React.Component {
             <React.Fragment>
                 <div className="container-followers">
                 {this.packingResources().map(card => (
-                    <button className="follower-card" key={card.id}>
+                    <button className="follower-card" key={card.id} >
+                        <div ref={(ctx) => this.ref = ctx}></div>
                         <div className="loader" ref={card.refLoader}></div>
                         <div className="title">
                             <figure></figure>
