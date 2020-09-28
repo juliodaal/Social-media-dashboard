@@ -28,6 +28,10 @@
     justify-content: center;
     align-items: center;
 }
+body.light .loader,
+body.light .loader-mini{
+    background: hsl(227, 47%, 96%);
+}
 .loader:before{
     width: 100px;
     height: 100px;
@@ -48,6 +52,13 @@
     border-right: 5px solid hsl(228, 28%, 20%); 
     transform: rotate(0deg);
     animation: loader 1s ease infinite;
+}
+body.light .loader:before,
+body.light .loader-mini:before{
+    border-top: 5px solid hsl(228, 28%, 20%); 
+    border-bottom: 5px solid hsl(227, 47%, 96%); 
+    border-left: 5px solid hsl(227, 47%, 96%); 
+    border-right: 5px solid hsl(227, 47%, 96%); 
 }
 @keyframes loader {
     from {transform: rotate(0deg);}
